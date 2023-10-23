@@ -9,7 +9,7 @@ public class App {
     public static void JDBCexample(String userid, String passwd) {
         try (
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:oracle:thin:@db.yale.edu:1521:univdb",
+                        "jdbc:mysql://localhost:8000/JDBC",
                         userid, passwd);
                 Statement stmt = conn.createStatement();) {
             try {
@@ -33,6 +33,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
+        JDBCexample("root", "molindu123");
     }
 
 }
