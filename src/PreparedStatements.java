@@ -10,9 +10,9 @@ public class PreparedStatements {
         Connection conn = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/JDBC",
             userid, passwd);) {
-      try (PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM instructor WHERE id=?");) {
+      try (PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM instructor WHERE id>=?");) {
         pstmt.setInt(1, 3);
-        pstmt.setInt(1, 2);
+        // pstmt.setInt(1, 2);
 
         ResultSet rs = pstmt.executeQuery();
         while (rs.next()) {
